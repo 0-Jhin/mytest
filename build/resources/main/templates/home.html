@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div class="jumbotron">
+        <h1>변호사 관리</h1>
+        <p class="lead">변호사 등록/목록</p>
+        <p>
+            <a class="btn btn-lg btn-secondary" href="/lawyers/new">변호사 등록</a>
+            <a class="btn btn-lg btn-secondary" href="/lawyers">변호사 목록</a>
+        </p>
+        <p class="lead">변호사 등록/목록(수정)</p>
+        <p>
+            <a class="btn btn-lg btn-dark" href="/laws/new">변호사 등록</a>
+            <a class="btn btn-lg btn-dark" href="/laws">변호사 목록(수정)</a>
+        </p>
+        <p class="lead">변호사 탐색</p>
+        <p>
+            <a class="btn btn-lg btn-info">변호사 탐색</a>
+        </p>
+    </div>
+    <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+</body>
+</html>
