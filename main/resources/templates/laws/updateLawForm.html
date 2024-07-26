@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+    <form th:object="${form}" method="post">
+        <!-- id -->
+        <input type="hidden" th:field="*{id}" />
+        <div class="form-group">
+            <label th:for="name">이름</label>
+            <input type="text" th:field="*{name}" class="form-control"
+                   placeholder="이름을 입력하세요" />
+        </div>
+        <div class="form-group">
+            <label th:for="businessRegistrationNumber">사업자 등록 번호</label>
+            <input type="text" th:field="*{businessRegistrationNumber}" class="form-control" placeholder="사업자 등록 번호를 입력하세요">
+        </div>
+        <div class="form-group">
+            <label th:for="officeName">사무실 이름</label>
+            <input type="text" th:field="*{officeName}" class="form-control" placeholder="사무실 이름을 입력하세요">
+        </div>
+        <div class="form-group">
+            <label th:for="officeAddress">사무실 주소</label>
+            <input type="text" th:field="*{officeAddress}" class="form-control" placeholder="사무실 주소를 입력하세요">
+        </div>
+        <div class="form-group">
+            <label th:for="phoneNumber">전화 번호</label>
+            <input type="text" th:field="*{phoneNumber}" class="form-control" placeholder="전화번호를 입력하세요">
+        </div>
+        <div class="form-group">
+            <label th:for="faxNumber">팩스 번호</label>
+            <input type="text" th:field="*{faxNumber}" class="form-control" placeholder="팩스 번호를 입력하세요">
+        </div><div class="form-group">
+        <label th:for="emailAddress">이메일 번호</label>
+        <input type="text" th:field="*{emailAddress}" class="form-control" placeholder="이메일 주소를 입력하세요">
+    </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+</body>
+</html>
