@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/header :: header" ></head>
+<head th:replace="fragments/header :: header" />
 <body>
 <div class="container">
-    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
     <div>
         <table class="table table-striped">
             <thead>
@@ -16,24 +16,28 @@
                 <th>전화 번호</th>
                 <th>팩스 번호</th>
                 <th>이메일 주소</th>
+                <th></th>
             </tr>
-
             </thead>
             <tbody>
-            <tr th:each="lawyer: ${lawyers}">
+            <tr th:each="lawyer : ${lawyers}">
                 <td th:text="${lawyer.id}"></td>
-                <td th:text="${lawyer.name}" th:onclick="|location.href='/lawyer/@{${lawyer.id}}'|"></td>
+                <td th:text="${lawyer.name}"></td>
                 <td th:text="${lawyer.businessRegistrationNumber}"></td>
                 <td th:text="${lawyer.address.officeName}"></td>
                 <td th:text="${lawyer.address.officeAddress}"></td>
                 <td th:text="${lawyer.contactInfo.phoneNumber}"></td>
                 <td th:text="${lawyer.contactInfo.faxNumber}"></td>
                 <td th:text="${lawyer.contactInfo.emailAddress}"></td>
+                <td>
+                    <a href="#" th:href="@{/lawyers/{id}/edit (id=${lawyer.id})}"
+                       class="btn btn-primary" role="button">수정</a>
+                </td>
             </tr>
             </tbody>
         </table>
     </div>
-    <div th:replace="fragments/footer :: footer" />
+    <div th:replace="fragments/footer :: footer"/>
 </div> <!-- /container -->
 </body>
 </html>

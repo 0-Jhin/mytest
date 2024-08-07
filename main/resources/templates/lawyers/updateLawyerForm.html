@@ -1,14 +1,16 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/header :: header"></head>
+<head th:replace="fragments/header :: header" />
 <body>
 <div class="container">
-    <div th:replace="fragments/bodyHeader :: bodyHeader"></div>
-    <form th:action="@{/lawyers/new}" th:object="${form}" method="post">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+    <form th:object="${form}" method="post">
+        <!-- id -->
+        <input type="hidden" th:field="*{id}" />
         <div class="form-group">
             <label th:for="name">이름</label>
             <input type="text" th:field="*{name}" class="form-control"
-                   placeholder="이름을 입력하세요">
+                   placeholder="이름을 입력하세요" />
         </div>
         <div class="form-group">
             <label th:for="businessRegistrationNumber">사업자 등록 번호</label>
@@ -35,11 +37,9 @@
             <input type="text" th:field="*{emailAddress}" class="form-control" placeholder="이메일 주소를 입력하세요">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="reset" class="btn btn-primary">취소</button>
+        <button type="submit" class="btn btn-primary">수정</button>
     </form>
-    <br/>
-    <div th:replace="fragments/footer :: footer"></div>
+    <div th:replace="fragments/footer :: footer" />
 </div>
 </body>
 </html>
